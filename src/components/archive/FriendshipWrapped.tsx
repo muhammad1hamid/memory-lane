@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { archive, wrappedStats, type WrappedStat } from "@/config/archive";
 
-function CountUp({ to, suffix }: { to: number; suffix?: string }) {
+function CountUp({ to, suffix }: { to: number; suffix?: string | undefined }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [n, setN] = useState(0);
