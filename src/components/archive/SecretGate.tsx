@@ -85,13 +85,13 @@ export function SecretGate({ onUnlock }: { onUnlock: () => void }) {
           }
           transition={error ? { duration: 0.45 } : { duration: 1.5, ease: "easeInOut" }}
           className="glass relative mx-auto mt-14 rounded-2xl px-6 py-9 sm:px-10"
-          style={
-            error
-              ? { boxShadow: "0 0 40px -12px oklch(0.62 0.2 22 / 0.5)" }
+          style={{
+            boxShadow: error
+              ? "0 0 40px -12px oklch(0.62 0.2 22 / 0.5)"
               : success
-                ? { boxShadow: "0 0 70px -10px var(--glow-blue)" }
-                : undefined
-          }
+                ? "0 0 70px -10px var(--glow-blue)"
+                : "var(--shadow-lift)",
+          }}
         >
           <p className="label-xs">{archive.gate.prompt}</p>
 
